@@ -1,0 +1,540 @@
+Question 1.what is java and its features?/Answer -java is an object oriented programming and is a back end programming language
+Answer-
+
+The main features of java are
+1.platform independent- even if we execute the program  in any operating system  the output will be the same , 
+because it has different jvms for differnt operating systems but still provide same output,that is the reason it is called platform independent
+
+2.provides more security-java programs run in an environment that is independent of the operating system environment which makes java programs more secure .
+
+3.java supports multi threading, the execution of two or more parts of a program for maximum utilization of the CPU.
+
+4.the main feature is resuability of the code which makes it more simple by usng inheritence.
+
+5.java provides high performance and also other option as Write Once Run Anywhere.java is also a simple progrmmaing language because it does not contain complex features like pointers in c.
+
+
+
+Question 2.Architecture of jvm?
+
+Answer: It contains classloader, memory area, execution engine
+class loader is used to the class files when we the java program and it is loaded first by class loader
+now coming back to method areas ,class area stores class such as run time 
+heap:it is the run time data area in which objects are allocated
+stack:java stack stores frames ,and it holds local variabels and partial results
+Execution Engine :it is used to read byte code and then execute the instructions .where as jit (just in time  )compiler ia used to improve the performance,JIT compiles parts of the byte code that have similar functionality at the same time 
+
+Java Native Interface (JNI) is a framework which provides an interface to communicate with another application written in another language like C, C++,  etc.
+
+
+
+Question 3.Difference between jdk,jvm and jre?
+
+
+Answer-jdk(java develpment kit):JDK  is a software development kit to develop applications in Java.
+JDK is primarily used for code execution and has prime functionality of development.
+JDK is platform dependent, it contains tools for developing, debugging and monitoring java application.
+
+Jre(java run time environment  ):JRE  is the implementation of JVM and is defined as a software package that provides Java class libraries, along with JVM, and other components to run applications written in Java programming.
+ JRE is majorly responsible for creating environment for code execution, it is also platform dependent.
+ it does not contain tools such as compiler or debugger etc. Rather it contains class libraries and other supporting files that JVM requires to run the program.
+
+jvm (java virtual machine):is an abstract machine that is platform-dependent 
+JVm specifies all the implementations and responsible to provide these implementations to JRE.
+jvm is platform independent and JVM does not include software development tools.
+
+
+Question 4:OOPS concept ?
+Answer:
+object:Any entity that has state and behavior is known as an object.example dog ,people etc.and it is also defined as instance of class.
+example:
+
+Public class name {
+int x=10;
+Public static void main (String args []) {
+name Myobj= new name ();
+System.out.println(MyObj.x);
+}
+}
+
+class:calss is defined as colection of objects .A class can also be defined as a blueprint from which you can create an individual object.
+example:
+class classname {
+type instance variable n;
+type methodname 1 (parameter list) {
+
+}
+type methodname 2 (parameter list) {
+
+}
+type methodname n(parameter list) {
+
+}
+ }
+
+
+Abstraction:Abstraction basically hides the internal  implementation and shows the functionality,it hides the data
+Example: Abstract class animal {
+         
+      public abstract void sound ( ) ;
+         }
+     Public class lion extends animal {
+      Public void sound ( ) {
+System.out.println (“ roar “ );
+}
+public Static void main ( String args [ ] ) {
+ animal obj = new lion ( );
+obj. sound ();
+}
+}
+
+inheritance:it is defined as which acquires data from another object properties,also can use acquire parent class properties using extend keyword.
+example:Class a {
+let a=10
+}
+Class b extends class a {
+….
+}
+Class c extends class b {
+… 
+}
+it means the class b can acquire class a properties using extends keyword.
+
+
+Polymorphism:it is a process that performs a single action in different ways. It occurs when we have many classes related to each other by inheritance.
+Example:
+public class Bird {
+…
+Public void sound ( ) {
+System.out.println ( “ birds sounds “ );
+}
+}
+public class pigeon extends Bird {
+…
+
+public void sound ( ) {
+System.out.println( “ cooing ” ) ;
+}
+}
+public class sparrow extends Bird ( ) {
+….
+
+Public void sound ( ){
+System.out.println( “ chip ” ) ;
+}
+}
+
+Encapsulation: basically encapsulation doesnot allow data to flow from one class to other,it can be accesed only from the same class and cannot be implemented outside the class
+example:class animal {
+ 
+private int age;
+ 
+Public int getage ( ) {
+return age;
+}
+ 
+public void setAge ( int age ) {
+this. Age = age;
+}
+}
+class Main {
+public static void main (String args []);
+
+Animal a1= new Animal ();
+
+A1. setAge (12);
+ 
+System.out.println(“ animal age is ” + a1. getage ( ) );
+}
+}
+
+
+Queston 5:constructor:
+want to perform some operations on the instance variables we need to initialize the Instance variables You can do so by having the same name as the class name. Such a method is called a constructor.
+example:class Item 
+{ 
+int a; 
+float b; 
+char c; 
+String s; 
+Item()   method with the same name as the constructor 
+a=0; 
+b=0.0;  
+} 
+
+this keyword:The this keyword can be used to refer current class instance variable
+example:class TestThismy{  
+public static void main(String args[]){  
+Student s1=new Student(111,"ankit",5000f);  
+Student s2=new Student(112,"sumit",6000f);  
+s1.display();  
+s2.display();  
+}
+
+Final keyword:The final keyword in java is used to restrict the user.final variables value cannot be changed once it is declared.
+example:class Bike9{  
+ final int speedlimit=90; 
+ void run(){  
+  speedlimit=400;  
+ }  
+ public static void main(String args[]){  
+ Bike9 obj=new  Bike9();  
+ obj.run();  
+ }
+
+Super Keyword:We can use super keyword to access the data member or field of parent class. It is used if parent class and child class have same fields.
+example:class Animal{  
+String color="white";  
+}  
+class Dog extends Animal{  
+String color="black";  
+void printColor(){  
+System.out.println(color); 
+System.out.println(super.color); 
+}  
+}  
+class TestSuper1{  
+public static void main(String args[]){  
+Dog d=new Dog();  
+d.printColor();  
+}} 
+
+
+Question-6:
+Interface:The interface in Java is a mechanism to achieve abstractionAn interface in Java is a blueprint of a class, we can provide 100% abstarction
+Example:interface Drawable{  
+void draw();  
+default void msg(){System.out.println("default method");}  
+}  
+class Rectangle implements Drawable{  
+public void draw(){System.out.println("hello ");}  
+}  
+class TestInterfaceDefault{  
+public static void main(String args[]){  
+Drawable d=new Rectangle();  
+d.draw();  
+d.msg();  
+}} 
+
+
+
+Abstract class:A class which is declared with the abstract keyword is known as an abstract class in Java. It can have abstract and non-abstract methods.it cannot provide 100% abastarction
+Example:abstract class Bike{  
+  abstract void run();  
+}  
+class Honda4 extends Bike{  
+void run(){System.out.println("good bike");}  
+public static void main(String args[]){  
+ Bike obj = new Honda4();  
+ obj.run();  
+}  
+}  
+
+
+
+Question:7-exception  ?
+Answer:exception is an event that occurs during the execution of a program and disrupts the normal flow of the program's instructions. Bugs or errors that we don't want and restrict our program's normal execution of code are referred to as exceptions.
+
+Error:Errors represent irrecoverable conditions such as Java virtual machine (JVM) running out of memory, memory leaks, stack overflow errors, library incompatibility, infinite recursion, etc.
+An Error indicates a serious problem that a reasonable application should not try to catch.
+
+
+Question:8-exception handling:Exception Handling in Java is one of the powerful mechanism to handle the runtime errors so that the normal flow of the application can be maintained.
+example:Suppose there are 10 statements in a Java program and an exception occurs at statement 5; the rest of the code will not be executed, i.e., statements 6 to 10 will not be executed. However, when we perform exception handling, the rest of the statements will be executed.
+public class JavaExceptionExample{  
+  public static void main(String args[]){  
+   try{  
+      //code that may raise exception  
+      int data=100/0;  
+   }catch(ArithmeticException e){System.out.println(e);}  
+   //rest code of the program   
+   System.out.println("rest of the code...");  
+  }  
+}  
+we use try cathc and finally block.
+
+
+Question-8:The Java throw keyword is used to throw an exception explicitly,We specify the exception object which is to be thrown. The Exception has some message with it that provides the error description. These exceptions may be related to user inputs, server, etc.
+example:
+throw new exception_class("error message"); 
+public class TestThrow1 {   
+     
+    public static void validate(int age) {  
+        if(age<18) {  
+            
+            throw new ArithmeticException("Person is not eligible to vote");    
+        }  
+        else {  
+            System.out.println("Person is eligible to vote!!");  
+        }  
+    }  
+     
+    public static void main(String args[]){  
+         
+        validate(13);  
+        System.out.println("rest of the code...");    
+  }    
+} 
+Throws keyword:Java throws keyword is used to declare an exception. It gives an information to the programmer that there may occur an exception. So, it is better for the programmer to provide the exception handling code so that the normal flow of the program can be maintained.
+
+Example:import java.io.IOException;  
+class Testthrows1{  
+  void m()throws IOException{  
+    throw new IOException("device error"); 
+  }  
+  void n()throws IOException{  
+    m();  
+  }  
+  void p(){  
+   try{  
+    n();  
+   }catch(Exception e){System.out.println("exception handled");}  
+  }  
+  public static void main(String args[]){  
+   Testthrows1 obj=new Testthrows1();  
+   obj.p();  
+   System.out.println("normal flow...");  
+  }  
+} 
+
+
+
+Question-10:multi- threading?
+Answer:Multithreading in Java is a process of executing multiple threads simultaneously.
+example:
+class MultithreadingDemo extends Thread {
+	public void run()
+	{
+		try {
+			// Displaying the thread that is running
+			System.out.println(
+				"Thread " + Thread.currentThread().getId()
+				+ " is running");
+		}
+		catch (Exception e) {
+			// Throwing an exception
+			System.out.println("Exception is caught");
+		}
+	}
+}
+
+
+public class Multithread {
+	public static void main(String[] args)
+	{
+		int n = 8; // Number of threads
+		for (int i = 0; i < n; i++) {
+			MultithreadingDemo object
+				= new MultithreadingDemo();
+			object.start();
+		}
+	}
+}
+
+
+Question-11:thread and types ofthread?
+
+
+A thread in Java is the direction or path that is taken while a program is being executed. Generally, all the programs have at least one thread, known as the main thread, that is provided by the JVM or Java Virtual Machine at the starting of the program's execution
+
+Java offers two types of threads: user threads and daemon threads. User threads are high-priority threads. The JVM will wait for any user thread to complete its task before terminating it.
+basically threads are of two types 
+user threads and daemon threads. 
+example:public class Main extends Thread {
+  public static void main(String[] args) {
+    Main thread = new Main();
+    thread.start();
+    System.out.println("This code is outside of the thread");
+  }
+  public void run() {
+    System.out.println("This code is running in a thread");
+  }
+}
+
+
+Question-12:synchronization?
+ANSWER:Synchronization in java is the capability to control the access of multiple threads to any shared resource. In the Multithreading concept, multiple threads try to access the shared resources at a time to produce inconsistent results. The synchronization is necessary for reliable communication between threads.
+example:class Table{  
+ synchronized void printTable(int n){//synchronized method  
+   for(int i=1;i<=5;i++){  
+     System.out.println(n*i);  
+     try{  
+      Thread.sleep(400);  
+     }catch(Exception e){System.out.println(e);}  
+   }  
+  
+ }  
+}  
+  
+class MyThread1 extends Thread{  
+Table t;  
+MyThread1(Table t){  
+this.t=t;  
+}  
+public void run(){  
+t.printTable(5);  
+}  
+  
+}  
+class MyThread2 extends Thread{  
+Table t;  
+MyThread2(Table t){  
+this.t=t;  
+}  
+public void run(){  
+t.printTable(100);  
+}  
+}  
+  
+public class TestSynchronization2{  
+public static void main(String args[]){  
+Table obj = new Table(); 
+MyThread1 t1=new MyThread1(obj);  
+MyThread2 t2=new MyThread2(obj);  
+t1.start();  
+t2.start();  
+}  
+}  
+
+
+Question:13-differnce betweeen synchronization and synchronizaton block?
+Answer:The main difference between the synchronized method and the synchronized block is a selection of locks on which critical section is locked.
+
+Read more: https://www.java67.com/2013/01/difference-between-synchronized-block-vs-method-java-example.html#ixzz7eUaaXzFy
+public class SycnronizationExample{
+ 
+ 
+    public synchronized void lockedByThis(){
+        System.out.println(" This synchronized method is locked by current" instance of object i.e. this");
+    }
+ 
+    public static synchronized void lockedByClassLock(){
+        System.out.println("This static synchronized method is locked by class level lock of this class i.e. SychronizationExample.class");
+
+    }
+ 
+    public void lockedBySynchronizedBlock(){
+        System.err.println("This line is executed without locking");
+     
+        Object obj = String.class; //class level lock of Stirng class
+     
+        synchronized(obj){
+            System.out.println("synchronized block, locked by lock represented using obj variable");
+        }
+    }
+     
+}
+
+
+question-14-Fibonacci series
+Answer:
+class FibonacciExample1{  
+public static void main(String args[])  
+{    
+ int n1=0,n2=1,n3,i,count=10;    
+ System.out.print(n1+" "+n2);  
+    
+ for(i=2;i<count;++i) 
+ {    
+  n3=n1+n2;    
+  System.out.print(" "+n3);    
+  n1=n2;    
+  n2=n3;    
+ }    
+  
+}} 
+
+
+
+Question-15:Pyramids and Patterns
+public class Main {
+
+  public static void main(String[] args) {
+    int rows = 5;
+
+    for (int i = 1; i <= rows; ++i) {
+      for (int j = 1; j <= i; ++j) {
+        System.out.print("* ");
+      }
+      System.out.println();
+    }
+  }
+}
+
+Question:16-Reverse a string?
+class ReverseString
+{
+  public static void main(String args[])
+  {
+    String original, reverse = "";
+    Scanner in = new Scanner(System.in);
+
+    System.out.println("Enter a string to reverse");
+    original = in.nextLine();
+
+    int length = original.length();
+
+    for (int i = length - 1 ; i >= 0 ; i--)
+      reverse = reverse + original.charAt(i);
+
+    System.out.println("Reverse of the string: " + reverse);
+  }
+}
+
+
+Question-17:check leap year?
+public class Main {
+
+  public static void main(String[] args) {
+
+    
+    int year = 1900;
+    boolean leap = false;
+
+   
+    if (year % 4 == 0) {
+
+      
+      if (year % 100 == 0) {
+
+        
+        if (year % 400 == 0)
+          leap = true;
+        else
+          leap = false;
+      }
+      
+     
+      else
+        leap = true;
+    }
+    
+    else
+      leap = false;
+
+    if (leap)
+      System.out.println(year + " is a leap year.");
+    else
+      System.out.println(year + " is not a leap year.");
+  }
+}
+
+
+Question:18-multiplication of number
+public class MultiplicationTable {
+
+    public static void main(String[] args) {
+
+        int num = 7;
+        for(int i = 1; i <= 10; ++i)
+        {
+            System.out.printf("%d * %d = %d \n", num, i, num * i);
+        }
+    }
+}
+
+
+
+
+ 
+
